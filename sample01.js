@@ -52,7 +52,7 @@ function onDiscover(sensorTag) {
           console.log('\tx = %d ', x);
           console.log('\ty = %d ', y);
           console.log('\tz = %d ', z);
-          var dataObj = {'x-axis': x, 'y-axis': y, 'z-axis': z};
+          var dataObj = {'x-axis': x, 'y-axis': y, 'z-axis': z, cur_date: new Date()};
           writeDataToMongo(dataObj);
         });
         sensorTag.notifyGyroscope(function (err) {
@@ -63,7 +63,7 @@ function onDiscover(sensorTag) {
   }
   
   function writeDataToMongo(dataObj) {
-    MongoClient.connect("mongodb://jmbox.myqnapcloud.com:27018/iotDB", function(err, db) {
+    MongoClient.connect("mongodb://developer:hist@ds062898.mongolab.com:62898/azure", function(err, db) {
       if(err) {
         return console.dir(err);
       }
