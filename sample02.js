@@ -29,8 +29,8 @@ function onDiscover(sensorTag) {
   console.log('>> end');
   
   function readDevice(error) {
-    if(error != undefined) {
-      console.log('>> error: ', error);
+    if(error) {
+      return console.dir(error);
     } else {
       console.log('>> readDeviceName');
       sensorTag.readDeviceName(function (error, deviceName) {
