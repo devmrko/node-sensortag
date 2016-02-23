@@ -47,7 +47,7 @@ function onDiscover(sensorTag) {
   
   function gyroscopeHandler(sensorTag) {
     sensorTag.enableGyroscope(function () {
-      sensorTag.setGyroscopePeriod(500, function () {
+      sensorTag.setGyroscopePeriod(2000, function () {
         sensorTag.on('gyroscopeChange', function (x, y, z) {
           console.log('\tx = %d ', x);
           console.log('\ty = %d ', y);
